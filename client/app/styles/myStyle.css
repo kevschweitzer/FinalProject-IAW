@@ -1,0 +1,32 @@
+.jumbotron {
+}
+
+.navbar {
+
+}
+
+#titulo {
+  margin-bottom: 0;
+  height: 200px;
+  margin-top: -25px;
+}
+
+.card{
+  width:200px;
+  heigth:200px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  float:left;
+}
+.card-img-top{
+  width: 198px;
+  height: 198px;
+}
+
+.card-title{
+  text-align: center;
+}
+
+.card{
+   border: 1px solid black;
+}
