@@ -37,7 +37,7 @@ class InfobaeSpider(scrapy.Spider):
 
         #Estoy obteniendo el titulo del articulo
         item['titulo'] = response.xpath('//h1/text()')[0].extract()
-
+        item['diario'] = "Infobae"
         #En infobae, los parrafos con el texto estan bajo la class = row
         #Obtengo todos los row
         row = response.xpath('//div[@class="row"]')
