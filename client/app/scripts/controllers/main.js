@@ -8,10 +8,10 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope,$rootScope,$routeParams,Noticia) {
+
+      $scope.noticias = Noticia.getList({limit:1000000}).$object;
+
+      $scope.primero = $scope.noticias[0];
+
   });

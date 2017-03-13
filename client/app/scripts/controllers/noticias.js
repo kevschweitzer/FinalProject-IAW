@@ -8,10 +8,10 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('NoticiasCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('NoticiasCtrl', function ($scope,Noticia) {
+
+    $scope.noticias = Noticia.getList().$object;
+
+
+
+});

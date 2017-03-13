@@ -58,6 +58,6 @@ angular
     });
   });
   })
-  .factory('Noticia', function(MovieRestangular) {
-    return MovieRestangular.service('noticia');
+  .factory('Noticia', function(NoticiaRestangular) {
+    return NoticiaRestangular.service('noticia');
   });

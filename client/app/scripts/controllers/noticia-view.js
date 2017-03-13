@@ -9,9 +9,6 @@
  */
 angular.module('clientApp')
   .controller('NoticiaViewCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+
   });

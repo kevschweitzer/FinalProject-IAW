@@ -28,6 +28,7 @@ class InfobaePortadaSpider(BaseSpider):
         for h in headlines:
             item['titulo'] = h.select("a/text()").extract()
             item['url'] = h.xpath("a/@href").extract()
+            item['diario'] = "Pagina 12"
             print item['titulo'],item['url']
             #Paso las listas a string
             textoTitulo = ""

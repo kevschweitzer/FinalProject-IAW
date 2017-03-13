@@ -19,7 +19,7 @@ class InfobaeSpider(scrapy.Spider):
     #Me conecto a la base de datos y obtengo las urls de las noticias de portada de infobae
     def __init__(self):
         self.db = MongoClient() #localhost por defecto
-        self.urls = self.db.proyectofinal.infobaeportadaitem.find({},{"_id": 0, "titulo": 0}) #use appropriate finding criteria here according to the structure of data resides in that collection
+        self.urls = self.db.proyectofinal.portadas.find({"diario":"Infobae"},{"_id": 0, "titulo": 0}) #use appropriate finding criteria here according to the structure of data resides in that collection
 
     #El start_urls se va a completar con las urls obtenidas desde la base de datos
     def start_requests(self):
@@ -56,7 +56,8 @@ class InfobaeSpider(scrapy.Spider):
         item['texto'] = texto
 
         imagenUrl = response.xpath('//div[@class="single-image"]//img/@data-original').extract()
-        item['imagenUrl'] =  imagenUrl[0]
+        if len(imagenUrl):
+            item['imagenUrl'] =  imagenUrl[0]
 
         #Calculo el sentiment
         client = repustate.Client(api_key='0378996fbd7c59fd4d5837125fe07f255550587d')

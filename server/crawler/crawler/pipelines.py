@@ -25,9 +25,16 @@ class MongoDBPipeline(object):
         self.db = connection[settings['MONGODB_DB']]
         #self.collection = db[settings['MONGODB_COLLECTION']]
 
+
+
+
     def process_item(self, item, spider):
-        self.collection = self.db[type(item).__name__.lower()]
         valid = True
+        if type(item).__name__.lower() == "infobaeportadaitem" or type(item).__name__.lower() == "telamportadaitem":
+            self.collection = self.db["portadas"]
+        if type(item).__name__.lower() == "infobaenoticiaitem" or type(item).__name__.lower() == "telamnoticiaitem":
+            self.collection = self.db["noticias"]
+
         for data in item:
             if not data:
                 valid = False

@@ -7,7 +7,15 @@ var NoticiaSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  url: {
+  texto: {
+    type: String,
+    required: true
+  },
+  sentiment: {
+    type: Number,
+    required: true
+  },
+  imagenUrl: {
     type: String,
     required: true
   },

@@ -12,6 +12,10 @@ var DiarioSchema = new mongoose.Schema({
   url: {
     type: String,
     required: true
+  },
+  logo: {
+    type: String, //url de la imagen
+    required: true
   }
 });
 

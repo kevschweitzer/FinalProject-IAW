@@ -1,14 +1,69 @@
-<div class="card" >
-  <img class="card-img-top" src="/images/ejemplo1.jpg" alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title">La ruta</h4>
+<div class="container-fluid col-md-12" id="noticiasPrincipales" ng-controller="MainCtrl">
+    <div class="col-xs-6" id=noticiaPrincipal>
+      <div id="npCard" class="card" ng-repeat="noticia in noticias" ng-if="$index == 0" >
+        <img class="card-img-top" src={{noticia.imagenUrl}} alt="Card image cap">
+        <div class="card-block" >
+          <h4 class="card-title">{{noticia.titulo}}</h4>
+        </div>
+      </div>
+    </div>
+
+
+      <div id="noticia1" class="card col-xs-6" ng-repeat="noticia in noticias" ng-if="$index == 1" >
+        <img class="card-img-top-2 col-md-4" src={{noticia.imagenUrl}} alt="Card image cap">
+        <div class="card-block col-md-8">
+          <h4 class="card-title">{{noticia.titulo}}</h4>
+        </div>
+      </div>
+
+      <div id="noticia2" class="card col-xs-6" ng-repeat="noticia in noticias" ng-if="$index == 2" >
+        <img class="card-img-top-2 col-md-4" src={{noticia.imagenUrl}} alt="Card image cap">
+        <div class="card-block col-md-8">
+          <h4 class="card-title">{{noticia.titulo}}</h4>
+        </div>
+      </div>
+</div>
+
+<hr size="20px" width="100%"  align="center" />
+
+
+<div class="container-fluid" id="masNoticias">
+  <div class="card col-xs-4" ng-repeat="noticia in noticias" ng-if="$index > 2" >
+    <img class="card-img-top" ng-show="{{noticia.imagenUrl}}" src={{noticia.imagenUrl}} alt="Card image cap">
+    <div class="card-img-top" ng-show="{{!noticia.imagenUrl}}" alt="Card image cap"></div>
+    <div class="card-block col-md-12">
+      <h4 class="card-title">{{noticia.titulo}}</h4>
+    </div>
   </div>
 </div>
 
-<div class="card" >
-  <img class="card-img-top" src="/images/ejemplo2.jpg" alt="Card image cap">
+
+
+
+
+
+
+
+
+<!--
+
+
+
+
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="/images/ejemplo1.jpg" alt="Card image cap">
   <div class="card-block">
-    <h4 class="card-title">del dinero</h4>
+    <h4 class="card-title">Card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+
+<div class="card" >
+  <img class="card-img-top" src="/images/ejemplo3.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">K</h4>
   </div>
 </div>
 
@@ -18,3 +73,30 @@
     <h4 class="card-title">K</h4>
   </div>
 </div>
+
+<div class="card" >
+  <img class="card-img-top" src="/images/ejemplo3.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">K</h4>
+  </div>
+</div>
+
+<div class="card" >
+  <img class="card-img-top" src="/images/ejemplo3.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">K</h4>
+  </div>
+</div>
+<div class="card" >
+  <img class="card-img-top" src="/images/ejemplo3.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">K</h4>
+  </div>
+</div>
+
+<article>
+  <img src="/images/ejemplo3.jpg" alt="Card image cap">
+
+    <h2>Noticia</h2>
+    <h3>EnconomiaPolitica<h3>
+</article>

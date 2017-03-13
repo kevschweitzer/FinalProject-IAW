@@ -20,7 +20,7 @@ class TelamSpider(scrapy.Spider):
     #Me conecto a la base de datos y obtengo las urls de las noticias de portada de infobae
     def __init__(self):
         self.db = MongoClient() #localhost por defecto
-        self.urls = self.db.proyectofinal.telamportadaitem.find({},{"_id": 0, "titulo": 0}) #use appropriate finding criteria here according to the structure of data resides in that collection
+        self.urls = self.db.proyectofinal.portadas.find({"diario":"Telam"},{"_id": 0, "titulo": 0}) #use appropriate finding criteria here according to the structure of data resides in that collection
 
     #El start_urls se va a completar con las urls obtenidas desde la base de datos
     def start_requests(self):
@@ -34,6 +34,9 @@ class TelamSpider(scrapy.Spider):
 
         #Creo el item
         item = TelamNoticiaItem()
+
+        #Seteo el diario
+        item['diario'] = "Telam"
 
         #Estoy obteniendo el titulo del articulo
         item['titulo'] = response.xpath('//h2/text()')[0].extract()

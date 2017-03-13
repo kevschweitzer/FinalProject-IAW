@@ -12,13 +12,14 @@ class InfobaeNoticiaItem(scrapy.Item):
     texto = scrapy.Field()
     imagenUrl = scrapy.Field()
     sentiment = scrapy.Field()
+    diario = scrapy.Field()
 
 class TelamNoticiaItem(scrapy.Item):
     titulo = scrapy.Field()
     texto = scrapy.Field()
     imagenUrl = scrapy.Field()
     sentiment = scrapy.Field()
-
+    diario = scrapy.Field()
 
 class Pagina12NoticiaItem(scrapy.Item):
     titulo = scrapy.Field()
@@ -27,10 +28,12 @@ class Pagina12NoticiaItem(scrapy.Item):
 class InfobaePortadaItem(scrapy.Item):
     titulo = scrapy.Field()
     url = scrapy.Field()
+    diario = scrapy.Field()
 
 class TelamPortadaItem(scrapy.Item):
     titulo = scrapy.Field()
     url = scrapy.Field()
+    diario = scrapy.Field()
 
 class Pagina12PortadaItem(scrapy.Item):
     titulo = scrapy.Field()
